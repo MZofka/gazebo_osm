@@ -42,6 +42,45 @@ class GetSDF:
         heading = Et.SubElement(spherical_coordinates, 'heading_deg')
         heading.text = str(headingVal)
 
+    def addGround(self, width, height):
+        ground = Et.SubElement(self.sdf.find('world'), 'model')
+        ground.set('name', 'ground')
+
+        static = Et.SubElement(ground, 'static')
+        static.text = "true"
+
+        link = Et.SubElement(ground, 'link')
+        link.set('name', "link")
+        Et.SubElement(link, 'pose').text = '0 0 -0.1 0 0 0'
+
+        collision = Et.SubElement(link, 'collision')
+        collision.set('name', 'collision')
+
+        geometry = Et.SubElement(collision, 'geometry')
+        plane = Et.SubElement(geometry, 'plane')
+        Et.SubElement(plane, 'size').text = str(width) + ' ' + str(height)
+        Et.SubElement(plane, 'normal').text = '0 0 1'
+
+        surface = Et.SubElement(collision, 'surface')
+        friction = Et.SubElement(surface, 'friction')
+        ode = Et.SubElement(friction, 'ode')
+        Et.SubElement(ode, 'mu').text = '100'
+        Et.SubElement(ode, 'mu2').text = '50'
+
+        visual = Et.SubElement(link, 'visual')
+        visual.set('name', 'visual')
+
+        geometry = Et.SubElement(visual, 'geometry')
+        plane = Et.SubElement(geometry, 'plane')
+        Et.SubElement(plane, 'normal').text = '0 0 1'
+        Et.SubElement(plane, 'size').text = str(width) + ' ' + str(height)
+
+        material = Et.SubElement(visual, 'material')
+        script = Et.SubElement(material, 'script')
+        Et.SubElement(script, 'uri').text = 'file://media/materials/scripts/gazebo.material'
+        Et.SubElement(script, 'name').text = 'Gazebo/Grass'
+
+
     def includeModel(self, modelName):
         ''' Include models in gazebo database'''
         includeModel = Et.SubElement(self.sdf.find('world'), 'include')
@@ -108,6 +147,8 @@ class GetSDF:
                           " " + str(point[2]))
 
     def addBuilding(self, mean, pointList, building_name, color):
+        height = 20.0
+
         building = Et.SubElement(self.sdf.find('world'), 'model')
         building.set('name', building_name)
         static = Et.SubElement(building, 'static')
@@ -142,14 +183,14 @@ class GetSDF:
 
             geometry = Et.SubElement(collision, 'geometry')
             box = Et.SubElement(geometry, 'box')
-            Et.SubElement(box, 'size').text = str(distance[point]) + ' 0.2 20'
+            Et.SubElement(box, 'size').text = str(distance[point]) + ' 0.2 ' + str(height)
 
             visual = Et.SubElement(link, 'visual')
             visual.set('name', (building_name + '_' + str(point)))
 
             geometry = Et.SubElement(visual, 'geometry')
             box = Et.SubElement(geometry, 'box')
-            Et.SubElement(box, 'size').text = str(distance[point]) + ' 0.2 20'
+            Et.SubElement(box, 'size').text = str(distance[point]) + ' 0.2 ' + str(height)
 
             material = Et.SubElement(visual, 'material')
             script = Et.SubElement(material, 'script')
@@ -159,7 +200,9 @@ class GetSDF:
             Et.SubElement(link, 'pose').text = (str(meanPoint[point][0]) +
                                                 ' ' +
                                                 str(meanPoint[point][1]) +
-                                                ' 0 0 0 ' +
+                                                ' ' +
+                                                str(height / 2.0 - 1.0) +
+                                                ' 0 0 ' +
                                                 str(yaw[point]))
 
     def writeToFile(self, filename):

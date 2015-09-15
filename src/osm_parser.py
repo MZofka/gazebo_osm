@@ -27,6 +27,7 @@ def parse_osm(input_file_path, output_file_path):
 
     sdf_file = GetSDF()
     sdf_file.addSphericalCoords(osm.getLat(), osm.getLon())
+    sdf_file.addGround(10000, 10000)
     sdf_file.includeModel("sun")
 
     for building_name in building_location_map.keys():
