@@ -1,126 +1,69 @@
 import osmapi
 import numpy as np
+from lxml import etree
 
-from lib.laneBoundaries import LaneBoundaries
 from lib.catmull_rom_spline import catmull_rom
 from lib.osm2dict import Osm2Dict
 from lib.dict2sdf import GetSDF
-from lxml import etree
 
 
-class OSMBoundingBox(object):
-    def __init__(self, min_latitude, max_latitude, min_longitude,
-                 max_longitude):
-        self.min_latitude = min_latitude
-        self.max_latitude = max_latitude
-        self.min_longitude = min_longitude
-        self.max_longitude = max_longitude
+def parse_osm(input_file_path, output_file_path):
+    input_file = open(input_file_path, 'r')
+    input_file_data = input_file.read()
+    input_file.close()
 
+    api = osmapi.OsmApi()
+    osm_dictionary = api.ParseOsm(input_file_data)
 
-class OSMFile(object):
-    def __init__(self, input_file_path):
-        input_file = open(input_file_path, 'r')
-        self.input_file_data = input_file.read()
-        input_file.close()
+    root = etree.fromstring(input_file_data)
+    min_longitude = float(root[0].get('minlon'))
+    min_latitude = float(root[0].get('minlat'))
+    max_longitude = float(root[0].get('maxlon'))
+    max_latitude = float(root[0].get('maxlat'))
 
-    def get_bounding_box(self):
-        root = etree.fromstring(self.input_file_data)
-        minlat = float(root[0].get('minlat'))
-        maxlat = float(root[0].get('maxlat'))
-        minlon = float(root[0].get('minlon'))
-        maxlon = float(root[0].get('maxlon'))
-        return OSMBoundingBox(minlat, maxlat, minlon, maxlon)
+    osm = Osm2Dict(min_longitude, min_latitude, max_longitude, max_latitude, osm_dictionary)
 
-    def get_osm_dictionary(self):
-        api = osmapi.OsmApi()
-        result = api.ParseOsm(self.input_file_data)
-        return result
+    road_point_width_map, model_pose_map, building_location_map = osm.getMapDetails()
 
-    def write_to_SDF(self, output_file_path):
-        osm_dictionary = self.get_osm_dictionary()
-        bounding_box = self.get_bounding_box()
-        osm = Osm2Dict(
-            bounding_box.min_longitude,
-            bounding_box.min_latitude,
-            bounding_box.max_longitude,
-            bounding_box.max_latitude,
-            osm_dictionary)
+    sdf_file = GetSDF()
+    sdf_file.addSphericalCoords(osm.getLat(), osm.getLon())
+    sdf_file.includeModel("sun")
 
-        roadPointWidthMap, modelPoseMap, buildingLocationMap = osm.getMapDetails()
+    for building_name in building_location_map.keys():
+        location = building_location_map[building_name]
+        mean = location['mean']
+        points = location['points']
+        color = location['color']
+        sdf_file.addBuilding(mean, points, building_name, color)
 
-        sdfFile = GetSDF()
-        sdfFile.addSphericalCoords(osm.getLat(), osm.getLon())
-        sdfFile.includeModel("sun")
-        # for model in modelPoseMap.keys():
-        #     points = modelPoseMap[model]['points']
-        #     if len(points) > 2:
-        #         sdfFile.addModel(modelPoseMap[model]['mainModel'],
-        #                          model,
-        #                          [points[0, 0], points[1, 0], points[2, 0]])
+    print('|-----------------------------------')
+    print('| Number of Roads: ' + str(len(road_point_width_map.keys())))
+    print('|-----------------------------------')
 
-        for building in buildingLocationMap.keys():
-            sdfFile.addBuilding(buildingLocationMap[building]['mean'],
-                                buildingLocationMap[building]['points'],
-                                building,
-                                buildingLocationMap[building]['color'])
+    for idx, road in enumerate(road_point_width_map.keys()):
+        sdf_file.addRoad(road, road_point_width_map[road]['texture'])
+        sdf_file.setRoadWidth(road_point_width_map[road]['width'], road)
+        points = road_point_width_map[road]['points']
 
-        print('|-----------------------------------')
-        print('| Number of Roads: ' + str(len(roadPointWidthMap.keys())))
-        print('|-----------------------------------')
+        print('| Road' + str(idx + 1) + ': ' + road.encode('utf-8').strip())
+        print "|  -- Width: ", str(road_point_width_map[road]['width'])
 
-        lanes = 0
+        x_data = points[0, :]
+        y_data = points[1, :]
 
-        roadLaneSegments = []
-        centerLaneSegments = []
-        laneSegmentWidths = []
+        if len(x_data) < 3:
+            for j in np.arange(len(x_data)):
+                sdf_file.addRoadPoint([x_data[j], y_data[j], 0], road)
+        else:
+            x, y = catmull_rom(x_data, y_data, 10)
+            for point in range(len(x)):
+                sdf_file.addRoadPoint([x[point], y[point], 0], road)
 
-        # Include the roads in the map in sdf file
-        for idx, road in enumerate(roadPointWidthMap.keys()):
-            sdfFile.addRoad(road, roadPointWidthMap[road]['texture'])
-            sdfFile.setRoadWidth(roadPointWidthMap[road]['width'], road)
-            points = roadPointWidthMap[road]['points']
+    print('|')
+    print('|-----------------------------------')
+    print('| Generating the SDF world file...')
+    sdf_file.writeToFile(output_file_path)
 
-            print('| Road' + str(idx + 1) + ': ' + road.encode('utf-8').strip())
-
-            laneSegmentWidths.append(roadPointWidthMap[road]['width'])
-            print "|  -- Width: ", str(roadPointWidthMap[road]['width'])
-
-            xData = points[0, :]
-            yData = points[1, :]
-
-            if len(xData) < 3:
-
-                x = []
-                y = []
-                lanePoint = []
-
-                for j in np.arange(len(xData)):
-                    sdfFile.addRoadPoint([xData[j], yData[j], 0], road)
-                    lanePoint.append([xData[j], yData[j]])
-                    x.append(xData[j])
-                    y.append(yData[j])
-
-                roadLaneSegments.append([lanePoint, lanePoint])
-                centerLaneSegments.append([x, y])
-
-            else:
-
-                x, y = catmull_rom(xData, yData, 10)
-
-                centerLaneSegments.append([x, y])
-
-                lanes = LaneBoundaries(x, y)
-                for point in range(len(x)):
-                    sdfFile.addRoadPoint([x[point], y[point], 0], road)
-                    # sdfFile.addRoadDebug([x[point], y[point], 0], road)
-
-        print('|')
-        print('|-----------------------------------')
-        print('| Generating the SDF world file...')
-        sdfFile.writeToFile(output_file_path)
 
 if __name__ == '__main__':
-    input_file_path = "../resources/ny.osm"
-    output_file_path = "../resources/result.sdf"
-    osm_file = OSMFile(input_file_path)
-    osm_file.write_to_SDF(output_file_path)
+    parse_osm("../resources/ny.osm", "../resources/result.sdf")
