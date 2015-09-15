@@ -1,0 +1,1088 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getchildren	function"
+			],
+			[
+				"WRO",
+				"WORLD_NAME"
+			],
+			[
+				"base",
+				"BASH_SOURCE"
+			],
+			[
+				"scr",
+				"SCRIPTPATH"
+			],
+			[
+				"lon",
+				"lon2	statement"
+			],
+			[
+				"vis",
+				"visualize"
+			],
+			[
+				"revo",
+				"revolute"
+			],
+			[
+				"man",
+				"mainSpawn"
+			],
+			[
+				"carr",
+				"carriers"
+			],
+			[
+				"main",
+				"mainSpawn"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"in",
+				"int32_t"
+			],
+			[
+				"image_",
+				"image_name"
+			],
+			[
+				"ho",
+				"hokuyo"
+			],
+			[
+				"lef",
+				"left_wheel-back"
+			],
+			[
+				"rig",
+				"right_wheel-front-joint"
+			],
+			[
+				"a",
+				"angle_0"
+			],
+			[
+				"cooca",
+				"COCOAPODS_REPO_PATH	statement"
+			],
+			[
+				"git",
+				"git_push	function"
+			],
+			[
+				"gi",
+				"git_commit	function"
+			],
+			[
+				"push",
+				"push_version	function"
+			],
+			[
+				"ver",
+				"version_message	statement"
+			],
+			[
+				"remove",
+				"remove_build_data	function"
+			],
+			[
+				"dir",
+				"dir_name	forstmt"
+			],
+			[
+				"su",
+				"subdirname	forstmt"
+			],
+			[
+				"gr",
+				"get_version	function"
+			],
+			[
+				"ne",
+				"new_version"
+			],
+			[
+				"pod",
+				"PODSPEC_PATH	statement"
+			],
+			[
+				"set_",
+				"set_podspec_version	function"
+			],
+			[
+				"pl",
+				"PLIST_PATH	statement"
+			],
+			[
+				"new",
+				"new-version"
+			],
+			[
+				"bun",
+				"bundle_version_short	function"
+			],
+			[
+				"bu",
+				"bundle_version	function"
+			],
+			[
+				"prop",
+				"property	New Property"
+			],
+			[
+				"b",
+				"bundle_version	function"
+			],
+			[
+				"x",
+				"XPlist	class"
+			],
+			[
+				"nex",
+				"next_version	statement"
+			],
+			[
+				"com",
+				"components	statement"
+			],
+			[
+				"ar",
+				"args	statement"
+			],
+			[
+				"pa",
+				"parse_args	function"
+			],
+			[
+				"pr",
+				"property	class"
+			],
+			[
+				"wri",
+				"write_source	function"
+			],
+			[
+				"outf",
+				"output_file_path	statement"
+			],
+			[
+				"buil",
+				"build_dir"
+			],
+			[
+				"bui",
+				"build_dir	statement"
+			],
+			[
+				"file",
+				"filename	forstmt"
+			],
+			[
+				"iter",
+				"iterkeys	function"
+			],
+			[
+				"key",
+				"keys	function"
+			],
+			[
+				"me",
+				"method	forstmt"
+			],
+			[
+				"get_m",
+				"get_method_body	function"
+			],
+			[
+				"ite",
+				"iteritems	function"
+			],
+			[
+				"meth",
+				"methods_group	statement"
+			],
+			[
+				"geT_me",
+				"get_method_name	function"
+			],
+			[
+				"meh",
+				"methods_group	statement"
+			],
+			[
+				"sp",
+				"split"
+			],
+			[
+				"ch",
+				"chroot	function"
+			],
+			[
+				"get_",
+				"get_indent	function"
+			],
+			[
+				"root",
+				"root_name	param"
+			],
+			[
+				"gte",
+				"get_tree	function"
+			],
+			[
+				"du",
+				"dumps	function"
+			],
+			[
+				"ia",
+				"image_path	forstmt"
+			],
+			[
+				"image",
+				"images_paths	statement"
+			],
+			[
+				"dic",
+				"dictionary	param"
+			],
+			[
+				"extra",
+				"extract_pure_strings	function"
+			],
+			[
+				"loc",
+				"localized_strings	statement"
+			],
+			[
+				"str",
+				"strings	statement"
+			],
+			[
+				"ex",
+				"extract_pure_strings	function"
+			],
+			[
+				"ope",
+				"opened	statement"
+			],
+			[
+				"res",
+				"result	forstmt"
+			],
+			[
+				"local",
+				"Localization"
+			],
+			[
+				"fa",
+				"False	keyword"
+			],
+			[
+				"fail",
+				"failed_lines	statement"
+			],
+			[
+				"ma",
+				"matching	statement"
+			],
+			[
+				"line",
+				"line_index	forstmt"
+			],
+			[
+				"fai",
+				"failed"
+			],
+			[
+				"file_",
+				"file_content"
+			],
+			[
+				"pri",
+				"print_message"
+			],
+			[
+				"ec",
+				"echoerr"
+			],
+			[
+				"fil",
+				"file_path"
+			],
+			[
+				"fo",
+				"font-style"
+			],
+			[
+				"pla",
+				"player_number	statement"
+			],
+			[
+				"cmo",
+				"comp_number"
+			],
+			[
+				"writel",
+				"WriteLine(bool value)	void"
+			],
+			[
+				"cons",
+				"Console	Console"
+			],
+			[
+				"te",
+				"TextView	InputTextView { get; set; }"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"List",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"List",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Project - all",
+					""
+				],
+				[
+					"Project - clean",
+					""
+				],
+				[
+					"Project - contact",
+					""
+				],
+				[
+					"Project - contact/fast",
+					""
+				],
+				[
+					"Project - edit_cache",
+					""
+				],
+				[
+					"Project - rebuild_cache",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Project - all",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Python",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Python",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 387.0,
+		"last_filter": "xml",
+		"selected_items":
+		[
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"xl",
+				"Set Syntax: XML"
+			],
+			[
+				"xm",
+				"Set Syntax: XML"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"x",
+				"Set Syntax: XML"
+			],
+			[
+				"xnl",
+				"Set Syntax: NAnt Build File"
+			],
+			[
+				"setsyproto",
+				"Set Syntax: Protocol Buffer"
+			],
+			[
+				"setsynxml",
+				"Set Syntax: XML"
+			],
+			[
+				"setsyxm",
+				"Set Syntax: XML"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"lint ",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prei",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previewi",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"saveh",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"preview in",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"oreviewi",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"isntal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"instap",
+				"Package Control: Install Package"
+			],
+			[
+				"objec",
+				"Set Syntax: Objective-C"
+			],
+			[
+				"syc#",
+				"Set Syntax: C#"
+			],
+			[
+				"sync+",
+				"Set Syntax: C++"
+			],
+			[
+				"syntc#",
+				"Set Syntax: C#"
+			],
+			[
+				"syntac#",
+				"Set Syntax: C#"
+			],
+			[
+				"C#",
+				"Set Syntax: C#"
+			],
+			[
+				"synbo",
+				"Set Syntax: Objective-C"
+			],
+			[
+				"instalp",
+				"Package Control: Install Package"
+			],
+			[
+				"painst",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm"
+	],
+	"file_history":
+	[
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/.gitignore",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-fPf1Qh.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-eYF_WQ.txt",
+		"/Users/chip/Development/work/robotics/projects/sensor_car/scripts/osm_parser.py",
+		"/Users/chip/Downloads/ny.sdf",
+		"/Users/chip/Development/work/robotics/projects/sensor_car/resources/worlds/somatic_worlds/new-york-parsed.world",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/scripts/gazebo_run.sh",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/resources/worlds/somatic_worlds/new-york-parsed.world",
+		"/Users/chip/Downloads/parser.py",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/resources/worlds/somatic_worlds/lidar_test1.world",
+		"/Users/chip/Downloads/ny-2.sdf",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/ny.sdf",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/new-york.sdf",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/lviv.osm",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/lviv.sdf",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/resources/models/somatic_models/polygon_test/model.config",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/resources/models/drc_models/polaris_ranger_ev/model.sdf",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/resources/models/somatic_models/polygon_test/model.sdf",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/source/dp.py",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/resources/models/somatic_models/somatic_vehicle/model.sdf",
+		"/Users/chip/.bash_profile",
+		"/usr/local/share/gazebo/setup.sh",
+		"/System/Library/Frameworks/CoreFoundation.framework/Headers/CFByteOrder.h",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/services/ServiceFactory.h",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/services/ServiceFactory.cc",
+		"/Applications/CLion.app/Contents/Info.plist",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/util/CMakeLists.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-7n7hn7.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-8zT8oy.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-gzCSNF.txt",
+		"/Users/chip/Desktop/somatic_vehicle.world",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/drcsim/src/drcsim/drcsim_gazebo_ros_plugins/src/VRCPlugin.cpp",
+		"/Users/chip/Desktop/somatic_car.world.xml",
+		"/Users/chip/Desktop/somatic_vehicle.sdf.xml",
+		"/Users/chip/Desktop/somatic_vehicle.config",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-zRALcs.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-5QKlO4.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-2gqlDC.txt",
+		"/Users/chip/Development/work/robotics/projects/sensor_car/messages/pedal_gas.proto",
+		"/Users/chip/Development/work/robotics/projects/sensor_car/messages/hand_brake.proto",
+		"/Users/chip/Development/work/robotics/projects/sensor_car/messages/pedal_brake.proto",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-4ostU9.txt",
+		"/Users/chip/Development/work/robotics/tools/ros-indigo-packs/drcsim/src/drcsim/drcsim_gazebo_ros_plugins/src/DRCVehicleROSPlugin.cpp",
+		"/Users/chip/Development/work/robotics/tools/ros-indigo-packs/drcsim/src/drcsim/drcsim_gazebo_ros_plugins/include/drcsim_gazebo_ros_plugins/DRCVehicleROSPlugin.h",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-wAlF58.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-CzeT8V.txt",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/scripts/gazebo.sh",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-Mbcixh.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-TrJxMX.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-6naoqs.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-qcEv72.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-w62y26.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-WCSpQM.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-8PCWlM.txt",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/drcsim/build/CMakeFiles/CMakeError.log",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/drcsim/build/CMakeFiles/CMakeOutput.log",
+		"/Users/chip/.gazebo/gui.ini",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/drcsim/src/drcsim/atlas_description/urdf/atlas.urdf",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-AM8SsU.txt",
+		"/Users/chip/Development/work/Robotics/tools/gazebo/.hgignore",
+		"/Users/chip/Development/work/Robotics/tools/ros-install-osx/install",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/src/sandia-hand/firmware/CMakeLists.txt",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/src/sandia-hand/ros/sandia_hand_driver/CMakeLists.txt",
+		"/Users/chip/Downloads/AutoCompiler-Codeforces-master/run.sh",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/drcsim/src/drcsim/drcsim_gazebo_ros_plugins/CMakeLists.txt",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/build/sandia-hand/ros/sandia_hand_driver/gui/homing/moc_homing_dialog.cxx_parameters",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/sandia-hand/ros/sandia_hand_driver/CMakeFiles/sandia_hand_homing.dir/all",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/src/sandia-hand/ros/sandia_hand_driver/cli/sandia_hand_cli.cpp",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/src/sandia-hand/ros/sandia_hand_driver/gui/homing/homing_dialog.cpp",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/src/sandia-hand/ros/sandia_hand_driver/gui/homing/homing_dialog.h",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/src/sandia-hand/ros/sandia_hand_driver/gui/homing/main.cpp",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/src/sandia-hand/CMakeLists.txt",
+		"/usr/local/Cellar/boost/1.57.0/include/boost/lexical_cast.hpp",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/src/CMakeLists.txt",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/sandia-hand/usr/local/Cellar/boost/1.57.0/include/boost/type_traits/detail/has_binary_operator.hp",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/source/osm2dict.py",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/source/getOsmFile.py",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/gz_osm.py",
+		"/Users/chip/Library/Preferences/PyCharm40/keymaps/Xcode.xml",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/outFile.sdf",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/new-york.",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/testFiles/outFile.sdf",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/source/laneBoundaries.py",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/source/templates/include/sick.inc",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/source/dict2sdf.py",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/map.osm",
+		"/Users/chip/Downloads/map.osm",
+		"/Users/chip/Downloads/AutoCompiler-Codeforces-master/572/A.cpp",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm_plugin/testFiles/outFile.sdf",
+		"/System/Library/LaunchDaemons/com.apple.taskgated.plist",
+		"/Users/chip/Development/work/Robotics/tools/gazebo/sudo",
+		"/Users/chip/Development/work/Robotics/tools/gazebo/nano",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/worlds/sensor_car.world",
+		"/Users/chip/Development/work/robotics/projects/sensor_car/worlds/sensor_car.world",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-fAZzkU.txt",
+		"/Users/chip/Dropbox/study/robotics/README.md",
+		"/Users/chip/Dropbox/study/robotics/README.html",
+		"/Users/chip/Downloads/chapter4-1/ToDoCore/CMakeLists.txt",
+		"/Users/chip/Downloads/chapter4-1/CMakeLists.txt",
+		"/Users/chip/Dropbox/dev/source/screeps/screeps.js",
+		"/Users/chip/Downloads/tmp",
+		"/Users/chip/Downloads/screeps.js",
+		"/Users/chip/Desktop/animation.cpp",
+		"/Users/chip/Development/work/Robotics/tools/gazebo/plugins/VehiclePlugin.hh",
+		"/Users/chip/Development/work/Robotics/tools/gazebo/plugins/VehiclePlugin.cc",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/receiver.cc",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/CMakeLists.txt",
+		"/Users/chip/.hgrc",
+		"/Users/chip/Development/work/Robotics/models/vehicle/model.sdf",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/.hgignore",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-u40and.txt",
+		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-94rJTD.txt",
+		"/Users/chip/Development/work/Robotics/projects/sensor_car/sensor_car.world",
+		"/Users/chip/Development/work/Robotics/models/sensors_car/model.sdf",
+		"/Users/chip/Development/work/Robotics/models/vehicle/model.config",
+		"/Users/chip/Development/work/Robotics/tools/gazebo/.hg/store/data/plugins/_vehicle_plugin.cc.i",
+		"/Users/chip/Development/work/robotics/tools/ros-indigo-packs/ackermann_vehicle/src/ackermann_vehicle/ackermann_vehicle_gazebo/nodes/ackermann_controller.py",
+		"/Users/chip/.ros/log/4b28f314-40cb-11e5-8125-600308a65092/roslaunch-chip.local-6286.log",
+		"/Users/chip/.ros/log/4b28f314-40cb-11e5-8125-600308a65092/ackermann_vehicle-ackermann_controller-7-stdout.log",
+		"/Users/chip/Development/work/robotics/tools/ros-indigo-packs/gazebo/install/lib/gazebo_ros/spawn_model",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo/src/gazebo_ros_pkgs/gazebo_msgs/srv/BodyRequest.srv",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo_demos/src/gazebo_ros_demos/rrbot_gazebo/CMakeLists.txt",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo/install/lib/gazebo_ros/spawn_model",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo/install/lib/python2.7/site-packages/gazebo_ros/gazebo_interface.py",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/ackermann_vehicle/src/ackermann_vehicle/ackermann_vehicle_gazebo/launch/ackermann_vehicle.launch",
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/ackermann_vehicle/src/ackermann_vehicle/ackermann_vehicle_gazebo/nodes/ackermann_controller.py",
+		"/Users/chip/.ros/log/b3038514-4038-11e5-8303-600308a65092/ackermann_vehicle-controller_spawner-6.log",
+		"/Users/chip/.gazebo/log/2015-07-23T16:54:09.491511/gzserver/state.log"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"plane",
+			"material",
+			"model",
+			"foo",
+			"includes",
+			"foos",
+			"1641074564",
+			"colli",
+			"torsio",
+			"torto",
+			"polyli",
+			"version",
+			"vehicle",
+			"ranger",
+			"vehicle",
+			"DRCVehicleROSPlugin",
+			"cheatsEnabled",
+			"this->cheatsEnabled",
+			"vehicl",
+			"found",
+			"error",
+			"pytz",
+			"ROS_DISTRO",
+			"ROS_INSTALL_DIR",
+			"_D",
+			"SCRIPT_DIR_PATH",
+			"set_target_properties(AtlasV3Plugin",
+			"plugin",
+			"atlas",
+			"gui",
+			"BOOST_TT_HAS_OPERATOR_HPP_INCLUDED",
+			"sandia_hand_cli",
+			"boost",
+			"sandia_hand_cli",
+			"moc",
+			"join",
+			"stop",
+			"getRoadDetails",
+			"self.highwayType",
+			"stop",
+			"road",
+			"getOsmFile",
+			"model",
+			"laneWidth",
+			"cv2",
+			"getRoadDetails",
+			"modelPoseMap",
+			"pose",
+			"a.noCloneEvent = !1",
+			"click",
+			"click\\",
+			"click",
+			"F(",
+			"F = fu",
+			"F(",
+			"chartURL",
+			"chartVoteID",
+			"XMLHttpRequest",
+			"TIMER",
+			"inputOsmFile",
+			"interactive",
+			"boundingbox",
+			"lon",
+			"args",
+			"boundingbox",
+			"Osm2Dict",
+			"self.latStart",
+			"getModelDetails",
+			"getmap",
+			"Not implemented for this type",
+			"osmFile",
+			"osmfi",
+			"stop_sign_1",
+			"inputOsmFile",
+			"mass",
+			"hokuyo",
+			"front_left_wheel",
+			"front_left_joint",
+			"front_right_joint",
+			"front_le",
+			"2.5",
+			"joint",
+			"used",
+			"i",
+			"usedMiners",
+			";\n",
+			"i",
+			"chas",
+			"mass",
+			"plugin",
+			"gas_joint",
+			"front_left_joint",
+			"/model",
+			"camera",
+			"steeri",
+			"joint",
+			"left_whe",
+			"front_wh",
+			"left_w",
+			"visuali",
+			"gas",
+			"frontPower",
+			"OnUpdate",
+			"steeringJoint",
+			"OnVelMsg",
+			"velSub",
+			"vel_cmd",
+			"error",
+			"plug",
+			"plugi",
+			"plugin",
+			"miss",
+			"error",
+			"filter",
+			"_path",
+			"executa",
+			"find",
+			"eigen",
+			"ogre",
+			"error",
+			"ogre",
+			"idir",
+			"ogre",
+			"aa9b0c6d371802e0535515758e88c4893045cd5f",
+			"545f954b7869f3093f9d7d9ec63638a6aaa8eb4e",
+			"1.7",
+			"gcc",
+			"CMAKE_MODULE_PATH"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"i",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 257.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 118.0
+	},
+	"output.variable_get":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "osm_parser.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"msgh.",
+				"gazebo/msgs/msgs.hh"
+			],
+			[
+				"praconcs",
+				"iOS/Sources/Controller/Practice/PracticeController.cs"
+			],
+			[
+				"pracocs",
+				"iOS/Sources/Controller/Practice/PracticeController.cs"
+			],
+			[
+				"praccontrcs",
+				"iOS/Sources/Controller/Practice/PracticeController.cs"
+			],
+			[
+				"pracontr",
+				"iOS/obj/Xcode/0/PracticeController.m"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 47.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
