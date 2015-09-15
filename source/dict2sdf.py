@@ -1,20 +1,19 @@
 ##############################################################################
-#Author: Tashwin Khurana
-#Version: 1.0
-#Package: gazebo_osm
+# Author: Tashwin Khurana
+# Version: 1.0
+# Package: gazebo_osm
 #
-#Description: GetSDF() class
+# Description: GetSDF() class
 #             Builds a sdf file by adding models and seting their properties,
 #             roads and sets spherical coordinates for the world
 ##############################################################################
 
 import lxml.etree as Et
-#import xml.dom.minidom as minidom
+# import xml.dom.minidom as minidom
 import numpy
 
 
 class GetSDF:
-
     def __init__(self):
         self.sdf = Et.Element('sdf')
         self.sdf.set('version', "1.4")
@@ -74,7 +73,7 @@ class GetSDF:
         roadMaterial = Et.SubElement(road, 'material')
         script = Et.SubElement(roadMaterial, 'script')
         Et.SubElement(script, 'uri').text = ('file://media/materials/' +
-                                                 'scripts/gazebo.material')
+                                             'scripts/gazebo.material')
         Et.SubElement(script, 'name').text = 'Gazebo/Black'
 
     # Adds little box to display location of osm gps point in world
@@ -121,22 +120,21 @@ class GetSDF:
 
         yaw = [numpy.arctan2((pointList[1, point] - pointList[1, point + 1]),
                              (pointList[0, point] - pointList[0, point + 1]))
-               for point in range(numpy.size(pointList, 1)-1)]
+               for point in range(numpy.size(pointList, 1) - 1)]
 
         distance = [numpy.sqrt(((pointList[1, point] -
-                                 pointList[1, point + 1])**2 +
+                                 pointList[1, point + 1]) ** 2 +
                                 (pointList[0, point] -
-                                 pointList[0, point + 1])**2))
-                    for point in range(numpy.size(pointList, 1)-1)]
+                                 pointList[0, point + 1]) ** 2))
+                    for point in range(numpy.size(pointList, 1) - 1)]
 
         meanPoint = [[(pointList[0, point] +
-                      pointList[0, point + 1])/2 - mean[0, 0],
-                     (pointList[1, point] +
-                      pointList[1, point + 1])/2 - mean[1, 0], 0]
-                     for point in range(numpy.size(pointList, 1)-1)]
+                       pointList[0, point + 1]) / 2 - mean[0, 0],
+                      (pointList[1, point] +
+                       pointList[1, point + 1]) / 2 - mean[1, 0], 0]
+                     for point in range(numpy.size(pointList, 1) - 1)]
 
         for point in range(len(yaw)):
-
             link = Et.SubElement(building, 'link')
             link.set('name', (building_name + '_' + str(point)))
             collision = Et.SubElement(link, 'collision')

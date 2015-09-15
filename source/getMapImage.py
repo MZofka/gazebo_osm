@@ -1,114 +1,117 @@
 ##############################################################################
-#Author: Tashwin Khurana
-#Version: 1.0
-#Package: gazebo_osm
+# Author: Tashwin Khurana
+# Version: 1.0
+# Package: gazebo_osm
 #
-#Description: getMapImage()
+# Description: getMapImage()
 #             Uses the data from .osm file to output an image of the area
 #             indicated in the .osm file and
 #             Stores it in file with the specified name(.png)
 ##############################################################################
 
 import os
+
 try:
-    import mapnik
-    HAS_MAPNIK = True
+  import mapnik
+
+  HAS_MAPNIK = True
 except ImportError:
-    HAS_MAPNIK = False
+  HAS_MAPNIK = False
 
 
 def getMapImage(osmFile, map_output):
-    '''Uses the data from the osmFile to out a .png image
-       of the area depicted by the input file'''
+  '''Uses the data from the osmFile to out a .png image
+     of the area depicted by the input file'''
 
-    if not HAS_MAPNIK:
-        print ('Error: Mapnik module is missing. ' +
-               'Please install for getting the image functionality.')
-        return -2
+  if not HAS_MAPNIK:
+    print('Error: Mapnik module is missing. ' +
+          'Please install for getting the image functionality.')
+    return -2
 
-    print ('Has Mapnik.')
+  print('Has Mapnik.')
 
-    if osmFile == '':
-        print 'Error: getMapImage::No File Recieved'
-        return -1
-    else:
-        print ('OSM File: ' + osmFile)
+  if osmFile == '':
+    print
+    'Error: getMapImage::No File Recieved'
+    return -1
+  else:
+    print('OSM File: ' + osmFile)
 
-    highwayList = dict({"motorway": {'width': 4,
-                                    'color': 'green',
-                                    'fontSize': 12},
-                       "trunk": {'width': 3,
-                                 'color': 'green',
-                                 'fontSize': 11},
-                       "primary": {'width': 1.5,
-                                   'color': '#0090ff',
-                                   'fontSize': 10},
-                       "secondary": {'width': 0.8,
-                                     'color': '#ff00ff',
-                                     'fontSize': 8},
-                       "tertiary": {'width': 0.42,
-                                    'color': '#000000',
+  highwayList = dict({"motorway": {'width': 4,
+                                   'color': 'green',
+                                   'fontSize': 12},
+                      "trunk": {'width': 3,
+                                'color': 'green',
+                                'fontSize': 11},
+                      "primary": {'width': 1.5,
+                                  'color': '#0090ff',
+                                  'fontSize': 10},
+                      "secondary": {'width': 0.8,
+                                    'color': '#ff00ff',
                                     'fontSize': 8},
-                       "residential": {'width': 0.21,
-                                       'color': 'black',
-                                       'fontSize': 8},
-                       "living_street": {'width': 0.21,
-                                         'color': 'black',
-                                         'fontSize': 8},
-                       "pedestrian": {'width': 0.21,
-                                      'color': 'brown',
+                      "tertiary": {'width': 0.42,
+                                   'color': '#000000',
+                                   'fontSize': 8},
+                      "residential": {'width': 0.21,
+                                      'color': 'black',
                                       'fontSize': 8},
-                       "footway": {'width': 0.21,
-                                   'color': 'brown',
-                                   'fontSize': 8}})
+                      "living_street": {'width': 0.21,
+                                        'color': 'black',
+                                        'fontSize': 8},
+                      "pedestrian": {'width': 0.21,
+                                     'color': 'brown',
+                                     'fontSize': 8},
+                      "footway": {'width': 0.21,
+                                  'color': 'brown',
+                                  'fontSize': 8}})
 
-    m = mapnik.Map(1024, 1024)
-    m.background = mapnik.Color('white')
+  m = mapnik.Map(1024, 1024)
+  m.background = mapnik.Color('white')
 
-    for highwayType in highwayList.keys():
-        styleType = mapnik.Style()
-        print (styleType)
-        rule = mapnik.Rule()
+  for highwayType in highwayList.keys():
+    styleType = mapnik.Style()
+    print(styleType)
+    rule = mapnik.Rule()
 
-        rule.filter = mapnik.Expression('[highway]=' + "'" + highwayType + "'")
+    rule.filter = mapnik.Expression('[highway]=' + "'" + highwayType + "'")
 
-        stk = mapnik.Stroke()
-        stk.color = mapnik.Color(highwayList[highwayType]['color'])
-        stk.line_cap = mapnik.line_cap.ROUND_CAP
-        stk.width = highwayList[highwayType]['width']
+    stk = mapnik.Stroke()
+    stk.color = mapnik.Color(highwayList[highwayType]['color'])
+    stk.line_cap = mapnik.line_cap.ROUND_CAP
+    stk.width = highwayList[highwayType]['width']
 
-        line_symbolizer = mapnik.LineSymbolizer(stk)
+    line_symbolizer = mapnik.LineSymbolizer(stk)
 
-        rule.symbols.append(line_symbolizer)
+    rule.symbols.append(line_symbolizer)
 
-        rule2 = mapnik.Rule()
+    rule2 = mapnik.Rule()
 
-        rule2.filter = mapnik.Expression('[highway]=' + "'" +
-                                         highwayType + "'")
+    rule2.filter = mapnik.Expression('[highway]=' + "'" +
+                                     highwayType + "'")
 
-        text_symbolizer = mapnik.TextSymbolizer(mapnik.Expression("[name]"),
-                                                "DejaVu Sans Book",
-                                                highwayList[highwayType]
-                                                          ['fontSize'],
-                                                mapnik.Color('black'))
-        text_symbolizer.halo_fill = mapnik.Color('white')
+    text_symbolizer = mapnik.TextSymbolizer(mapnik.Expression("[name]"),
+                                            "DejaVu Sans Book",
+                                            highwayList[highwayType]
+                                            ['fontSize'],
+                                            mapnik.Color('black'))
+    text_symbolizer.halo_fill = mapnik.Color('white')
 
-        rule2.symbols.append(text_symbolizer)
+    rule2.symbols.append(text_symbolizer)
 
-        styleType.rules.append(rule)
-        styleType.rules.append(rule2)
+    styleType.rules.append(rule)
+    styleType.rules.append(rule2)
 
-        m.append_style(highwayType, styleType)
+    m.append_style(highwayType, styleType)
 
-    ds = mapnik.Osm(file=osmFile)
+  ds = mapnik.Osm(file=osmFile)
 
-    layer = mapnik.Layer('world')
-    layer.datasource = ds
-    for highwayType in highwayList.keys():
-        layer.styles.append(highwayType)
+  layer = mapnik.Layer('world')
+  layer.datasource = ds
+  for highwayType in highwayList.keys():
+    layer.styles.append(highwayType)
 
-    m.layers.append(layer)
-    m.zoom_all()
-    mapnik.render_to_file(m, map_output, 'png')
+  m.layers.append(layer)
+  m.zoom_all()
+  mapnik.render_to_file(m, map_output, 'png')
 
-    return os.system('xdg-open ' + map_output)
+  return os.system('xdg-open ' + map_output)

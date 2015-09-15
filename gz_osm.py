@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+
 sys.path.insert(0, 'source')
 import os
 import numpy as np
@@ -7,21 +8,16 @@ from lxml import etree
 import argparse
 from dict2sdf import GetSDF
 from osm2dict import Osm2Dict
-from getMapImage import getMapImage
 from getOsmFile import getOsmFile
-from roadSmoothing import SmoothRoad
 from laneBoundaries import LaneBoundaries
 from catmull_rom_spline import catmull_rom
 from createStageFiles import StageWorld
-import matplotlib.pyplot as plt
-
-
 
 TIMER = 1
 
 
 def tic():
-    #Homemade version of matlab tic and toc functions
+    # Homemade version of matlab tic and toc functions
     import time
     global startTime_for_tictoc
     startTime_for_tictoc = time.time()
@@ -30,11 +26,13 @@ def tic():
 def toc():
     import time
     if 'startTime_for_tictoc' in globals():
-        print ("| Elapsed time: " + str(time.time()
-               - startTime_for_tictoc)
-               + " sec")
+        print("| Elapsed time: " + str(time.time()
+                                       - startTime_for_tictoc)
+              + " sec")
     else:
-        print "Toc: start time not set"
+        print
+        "Toc: start time not set"
+
 
 if TIMER:
     tic()
@@ -48,7 +46,7 @@ parser.add_argument('-o', '--osmFile', help='Name of the osm file generated',
 parser.add_argument('-O', '--inputOsmFile', help='Name of the Input osm file',
                     type=str,
                     default='')
-parser.add_argument('--stage', 
+parser.add_argument('--stage',
                     help='Generate Stage World',
                     action='store_true')
 parser.add_argument('--name', help='Name of stage output name',
@@ -111,7 +109,7 @@ if args.roads:
 if args.lanes:
     flags.append('l')
 
-if not(args.roads or args.models or args.buildings) or args.displayAll:
+if not (args.roads or args.models or args.buildings) or args.displayAll:
     flags.append('a')
 
 if not os.path.exists(args.directory):
@@ -132,10 +130,9 @@ if args.interactive:
     endCoords = raw_input("Enter ending coordnates: [lon lat]: ").split(' ')
 
     if (startCoords and endCoords and
-            len(startCoords) == 2 and len(endCoords) == 2):
+                len(startCoords) == 2 and len(endCoords) == 2):
 
         for incoords in range(2):
-
             startCoords[incoords] = float(startCoords[incoords])
             endCoords[incoords] = float(endCoords[incoords])
 
@@ -145,7 +142,7 @@ if args.interactive:
                            "Camino Real Highway, CA (2), Bethlehem," +
                            " PA (default=1): ")
 
-        # if choice != '2': 
+        # if choice != '2':
         #     startCoords = [37.3566, -122.0091]
         #     endCoords = [37.3574, -122.0081]
 
@@ -173,9 +170,9 @@ if args.inputOsmFile:
                         float(root[0].get('minlat')),
                         float(root[0].get('maxlon')),
                         float(root[0].get('maxlat'))]
-print (' _______________________________')
-print ('|')
-print ('| Downloading the osm data ... ')
+print(' _______________________________')
+print('|')
+print('| Downloading the osm data ... ')
 osmDictionary = getOsmFile(args.boundingbox,
                            args.osmFile, args.inputOsmFile)
 
@@ -188,43 +185,44 @@ osmDictionary = getOsmFile(args.boundingbox,
 #     if TIMER:
 #         toc()
 
-#Initialize the class
+# Initialize the class
 osmRoads = Osm2Dict(args.boundingbox[0], args.boundingbox[1],
                     args.boundingbox[2], args.boundingbox[3],
                     osmDictionary, flags)
 
-print ('| Extracting the map data for gazebo ...')
-#get Road and model details
-#roadPointWidthMap, modelPoseMap, buildingLocationMap = osmRoads.getMapDetails()
-roadPointWidthMap = osmRoads.getRoadDetails()
-print ('| Building sdf file ...')
-#Initialize the getSdf class
+print('| Extracting the map data for gazebo ...')
+# get Road and model details
+roadPointWidthMap, modelPoseMap, buildingLocationMap = osmRoads.getMapDetails()
+# roadPointWidthMap = osmRoads.getRoadDetails()
+print('| Building sdf file ...')
+# Initialize the getSdf class
 sdfFile = GetSDF()
 
 
-#Set up the spherical coordinates
+# Set up the spherical coordinates
 sdfFile.addSphericalCoords(osmRoads.getLat(), osmRoads.getLon())
 
-#add Required models
+# add Required models
 sdfFile.includeModel("sun")
-# for model in modelPoseMap.keys():
-#     points = modelPoseMap[model]['points']
-#     sdfFile.addModel(modelPoseMap[model]['mainModel'],
-#                      model,
-#                      [points[0, 0], points[1, 0], points[2, 0]])
+for model in modelPoseMap.keys():
+    points = modelPoseMap[model]['points']
+    if len(points) > 2:
+        sdfFile.addModel(modelPoseMap[model]['mainModel'],
+                         model,
+                         [points[0, 0], points[1, 0], points[2, 0]])
 
-# for building in buildingLocationMap.keys():
-#     sdfFile.addBuilding(buildingLocationMap[building]['mean'],
-#                         buildingLocationMap[building]['points'],
-#                         building,
-#                         buildingLocationMap[building]['color'])
-print ('|')
-print ('|-----------------------------------')
-print ('| Number of Roads: ' + str(len(roadPointWidthMap.keys())))
-print ('|-----------------------------------')
-#print ('|')
+for building in buildingLocationMap.keys():
+    sdfFile.addBuilding(buildingLocationMap[building]['mean'],
+                        buildingLocationMap[building]['points'],
+                        building,
+                        buildingLocationMap[building]['color'])
+print('|')
+print('|-----------------------------------')
+print('| Number of Roads: ' + str(len(roadPointWidthMap.keys())))
+print('|-----------------------------------')
+# print ('|')
 
-#fig = plt.figure()
+# fig = plt.figure()
 
 lanes = 0
 
@@ -232,22 +230,23 @@ roadLaneSegments = []
 centerLaneSegments = []
 laneSegmentWidths = []
 
-#Include the roads in the map in sdf file
+# Include the roads in the map in sdf file
 for idx, road in enumerate(roadPointWidthMap.keys()):
     sdfFile.addRoad(road, roadPointWidthMap[road]['texture'])
     sdfFile.setRoadWidth(roadPointWidthMap[road]['width'], road)
     points = roadPointWidthMap[road]['points']
 
-    print ('| Road' + str(idx+1) + ': ' + road)
+    print('| Road' + str(idx + 1) + ': ' + road)
 
     laneSegmentWidths.append(roadPointWidthMap[road]['width'])
-    print "|  -- Width: ", str(roadPointWidthMap[road]['width'])
+    print
+    "|  -- Width: ", str(roadPointWidthMap[road]['width'])
 
     xData = points[0, :]
     yData = points[1, :]
 
     if len(xData) < 3:
-        #print ('Cannot apply spline with [' + str(len(xData)) + '] points. At least 3 needed.')
+        # print ('Cannot apply spline with [' + str(len(xData)) + '] points. At least 3 needed.')
 
         x = []
         y = []
@@ -255,7 +254,7 @@ for idx, road in enumerate(roadPointWidthMap.keys()):
 
         for j in np.arange(len(xData)):
             sdfFile.addRoadPoint([xData[j], yData[j], 0], road)
-            lanePoint.append([xData[j],yData[j]])
+            lanePoint.append([xData[j], yData[j]])
             x.append(xData[j])
             y.append(yData[j])
 
@@ -268,7 +267,7 @@ for idx, road in enumerate(roadPointWidthMap.keys()):
 
 
         roadLaneSegments.append([lanePoint, lanePoint])
-        centerLaneSegments.append([x,y])
+        centerLaneSegments.append([x, y])
 
     else:
 
@@ -276,7 +275,7 @@ for idx, road in enumerate(roadPointWidthMap.keys()):
 
         centerLaneSegments.append([x, y])
 
-        lanes = LaneBoundaries(x,y)
+        lanes = LaneBoundaries(x, y)
 
         # [lanePointsA, lanePointsB]  = lanes.createLanes(6)
 
@@ -297,14 +296,14 @@ for idx, road in enumerate(roadPointWidthMap.keys()):
         #     yPointsB.append(lanePointsB[i*2][1])
         #     #sdfFile.addRightLaneDebug([lanePointsB[i*2][0], lanePointsB[i*2][1], 0], road)
 
-#### Debug
-        #plt.plot(xData, yData, 'bo', x, y, 'r-', xPointsA, yPointsA, 'g-', xPointsB, yPointsB, 'g-')
-        #plt.plot(xPointsA, yPointsA, 'g-', xPointsB, yPointsB, 'g-')
-        #plt.plot(xData, yData, 'ro-', x, y, 'b+')
-        #plt.legend(['data', 'catmull'], loc='best')
+        #### Debug
+        # plt.plot(xData, yData, 'bo', x, y, 'r-', xPointsA, yPointsA, 'g-', xPointsB, yPointsB, 'g-')
+        # plt.plot(xPointsA, yPointsA, 'g-', xPointsB, yPointsB, 'g-')
+        # plt.plot(xData, yData, 'ro-', x, y, 'b+')
+        # plt.legend(['data', 'catmull'], loc='best')
         ##plt.plot(x, y, 'b+')
-        #plt.show()
-#### Debug
+        # plt.show()
+        #### Debug
 
 
         # lanes.saveImage(size, lanePointsA, lanePointsB)
@@ -314,33 +313,34 @@ for idx, road in enumerate(roadPointWidthMap.keys()):
 
         for point in range(len(x)):
             sdfFile.addRoadPoint([x[point], y[point], 0], road)
-            #sdfFile.addRoadDebug([x[point], y[point], 0], road)
+            # sdfFile.addRoadDebug([x[point], y[point], 0], road)
 
-print ('|')
-print ('|-----------------------------------')
-print ('| Generating the SDF world file...')
+print('|')
+print('|-----------------------------------')
+print('| Generating the SDF world file...')
 sdfFile.writeToFile(args.outFile)
 
 # if args.imageFile:
-print ('| Generating Image File...')
-print ('|-----------------------------------')
-print ('|')
+print('| Generating Image File...')
+print('|-----------------------------------')
+print('|')
 size = osmRoads.getMapSize()
 #    args.imageFile = args.directory + args.imageFile
-lanes.makeImage(size, 5, roadLaneSegments, centerLaneSegments, laneSegmentWidths, args.name + ".png")
+# lanes.makeImage(size, 1, roadLaneSegments, centerLaneSegments, laneSegmentWidths,
+#                 args.name + ".png")
 
-print ('| Lat Center  = '+ str(osmRoads.getLat()))
-print ('| Lon Center  = '+ str(osmRoads.getLon()))
+print('| Lat Center  = ' + str(osmRoads.getLat()))
+print('| Lon Center  = ' + str(osmRoads.getLon()))
 
 if args.stage:
-    stage = StageWorld([443, 700], [1300, 4800], [-45.12, 14.4334], [4.2,444.355])
+    stage = StageWorld([443, 700], [1300, 4800], [-45.12, 14.4334], [4.2, 444.355])
 
     stage.createStageSetup(args.name)
 
-#plt.show()
+# plt.show()
 
 if TIMER:
     toc()
 
-print ('|______________________________')
-print ('')
+print('|______________________________')
+print('')
