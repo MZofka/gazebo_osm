@@ -4,8 +4,80 @@
 		"selected_items":
 		[
 			[
+				"osm",
+				"Osm2Dict"
+			],
+			[
+				"maxl",
+				"maxlon	statement"
+			],
+			[
+				"minl",
+				"minlon	statement"
+			],
+			[
+				"maxla",
+				"maxlat	statement"
+			],
+			[
+				"min",
+				"min_latitude	statement"
+			],
+			[
+				"inpu",
+				"input_file_data	param"
+			],
+			[
+				"pr",
+				"print	keyword"
+			],
+			[
+				"inp",
+				"input_file	statement"
+			],
+			[
+				"intp",
+				"input_file	statement"
+			],
+			[
+				"input",
+				"input_file_path	param"
+			],
+			[
+				"max",
+				"max_longitude"
+			],
+			[
+				"min_l",
+				"min_latitude"
+			],
+			[
+				"bo",
+				"bounding_box	statement"
+			],
+			[
+				"inpt",
+				"input_file"
+			],
+			[
+				"max_l",
+				"max_longitude"
+			],
+			[
+				"osmpa",
+				"OSMParser	class"
+			],
+			[
+				"input_",
+				"input_file_path"
+			],
+			[
+				"inf",
+				"input_file_path	param"
+			],
+			[
 				"get",
-				"getchildren	function"
+				"get_bounding_box	function"
 			],
 			[
 				"WRO",
@@ -162,10 +234,6 @@
 			[
 				"pa",
 				"parse_args	function"
-			],
-			[
-				"pr",
-				"property	class"
 			],
 			[
 				"wri",
@@ -347,6 +415,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/osm_parser.py",
+			"settings":
+			{
+				"buffer_size": 4497,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/lib/dict2sdf.py",
+			"settings":
+			{
+				"buffer_size": 7195,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -483,8 +567,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 387.0,
-		"last_filter": "xml",
+		"height": 87.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -669,10 +753,20 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/chip/Development/work/Robotics/tools/gazebo_osm"
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/resources",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/src",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/lib"
 	],
 	"file_history":
 	[
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/resources/result.sdf",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/gz_osm.py",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/lib/osm2dict.py",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/lib/getOsmFile.py",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/osm_parser.sublime-project",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/resources/result.osm",
+		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/lib/dict2sdf.py",
 		"/Users/chip/Development/work/Robotics/tools/gazebo_osm/.gitignore",
 		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-fPf1Qh.txt",
 		"/var/folders/f_/tjq31q755gnblb43864zs_c40000gn/T/hg-editor-eYF_WQ.txt",
@@ -793,18 +887,11 @@
 		"/Users/chip/.ros/log/4b28f314-40cb-11e5-8125-600308a65092/roslaunch-chip.local-6286.log",
 		"/Users/chip/.ros/log/4b28f314-40cb-11e5-8125-600308a65092/ackermann_vehicle-ackermann_controller-7-stdout.log",
 		"/Users/chip/Development/work/robotics/tools/ros-indigo-packs/gazebo/install/lib/gazebo_ros/spawn_model",
-		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo/src/gazebo_ros_pkgs/gazebo_msgs/srv/BodyRequest.srv",
-		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo_demos/src/gazebo_ros_demos/rrbot_gazebo/CMakeLists.txt",
-		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo/install/lib/gazebo_ros/spawn_model",
-		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo/install/lib/python2.7/site-packages/gazebo_ros/gazebo_interface.py",
-		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/ackermann_vehicle/src/ackermann_vehicle/ackermann_vehicle_gazebo/launch/ackermann_vehicle.launch",
-		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/ackermann_vehicle/src/ackermann_vehicle/ackermann_vehicle_gazebo/nodes/ackermann_controller.py",
-		"/Users/chip/.ros/log/b3038514-4038-11e5-8303-600308a65092/ackermann_vehicle-controller_spawner-6.log",
-		"/Users/chip/.gazebo/log/2015-07-23T16:54:09.491511/gzserver/state.log"
+		"/Users/chip/Development/work/Robotics/tools/ros-indigo-packs/gazebo/src/gazebo_ros_pkgs/gazebo_msgs/srv/BodyRequest.srv"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 52.0
 	},
 	"find_in_files":
 	{
@@ -819,6 +906,32 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"write_to_sdf",
+			"write_to_file",
+			"OSMFile",
+			"numpy",
+			"East 47th",
+			"range(12",
+			"LaneBoundaries",
+			"catmull_rom",
+			"parser",
+			"get_osm_data",
+			"get_osm_dictionary",
+			"osm_dictinary",
+			"OSMParser",
+			"save",
+			"getsdf",
+			"min_longitude",
+			"osm",
+			"Osm",
+			"osm",
+			"latStart",
+			"osm",
+			"bounding_box",
+			"boundingbox",
+			"f",
+			"Osm2Dict",
+			"get_osm",
 			"plane",
 			"material",
 			"model",
@@ -920,33 +1033,7 @@
 			"left_w",
 			"visuali",
 			"gas",
-			"frontPower",
-			"OnUpdate",
-			"steeringJoint",
-			"OnVelMsg",
-			"velSub",
-			"vel_cmd",
-			"error",
-			"plug",
-			"plugi",
-			"plugin",
-			"miss",
-			"error",
-			"filter",
-			"_path",
-			"executa",
-			"find",
-			"eigen",
-			"ogre",
-			"error",
-			"ogre",
-			"idir",
-			"ogre",
-			"aa9b0c6d371802e0535515758e88c4893045cd5f",
-			"545f954b7869f3093f9d7d9ec63638a6aaa8eb4e",
-			"1.7",
-			"gcc",
-			"CMAKE_MODULE_PATH"
+			"frontPower"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -966,8 +1053,67 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/osm_parser.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3413,
+								3413
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1032.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/chip/Development/work/Robotics/tools/gazebo_osm/src/lib/dict2sdf.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7195,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5781,
+								5781
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1609.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1004,7 +1150,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 257.0
+		"height": 429.0
 	},
 	"output.find_results":
 	{
@@ -1080,7 +1226,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 212.0,
+	"side_bar_width": 306.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
