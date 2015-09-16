@@ -51,10 +51,10 @@ class GetSDF:
 
         link = Et.SubElement(ground, 'link')
         link.set('name', "link")
-        Et.SubElement(link, 'pose').text = '0 0 -0.1 0 0 0'
 
         collision = Et.SubElement(link, 'collision')
         collision.set('name', 'collision')
+        Et.SubElement(collision, 'pose').text = '0 0 0 0 0 0'
 
         geometry = Et.SubElement(collision, 'geometry')
         plane = Et.SubElement(geometry, 'plane')
@@ -69,8 +69,10 @@ class GetSDF:
 
         visual = Et.SubElement(link, 'visual')
         visual.set('name', 'visual')
+        Et.SubElement(visual, 'pose').text = '0 0 -1 0 0 0'
 
         geometry = Et.SubElement(visual, 'geometry')
+
         plane = Et.SubElement(geometry, 'plane')
         Et.SubElement(plane, 'normal').text = '0 0 1'
         Et.SubElement(plane, 'size').text = str(width) + ' ' + str(height)
@@ -79,6 +81,13 @@ class GetSDF:
         script = Et.SubElement(material, 'script')
         Et.SubElement(script, 'uri').text = 'file://media/materials/scripts/gazebo.material'
         Et.SubElement(script, 'name').text = 'Gazebo/Grass'
+
+
+    def addScene(self, grid, origin_visual):
+        scene = Et.SubElement(self.sdf.find('world'), 'scene')
+
+        Et.SubElement(scene, 'grid').text = str(grid).lower()
+        Et.SubElement(scene, 'origin_visual').text = str(origin_visual).lower()
 
 
     def includeModel(self, modelName):

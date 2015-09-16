@@ -11,8 +11,8 @@
     <model name="ground">
       <static>true</static>
       <link name="link">
-        <pose>0 0 -0.1 0 0 0</pose>
         <collision name="collision">
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <plane>
               <size>10000 10000</size>
@@ -29,6 +29,7 @@
           </surface>
         </collision>
         <visual name="visual">
+          <pose>0 0 -1 0 0 0</pose>
           <geometry>
             <plane>
               <normal>0 0 1</normal>
@@ -44,6 +45,10 @@
         </visual>
       </link>
     </model>
+    <scene>
+      <grid>false</grid>
+      <origin_visual>false</origin_visual>
+    </scene>
     <include>
       <uri>model://sun</uri>
     </include>
