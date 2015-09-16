@@ -1,3 +1,6 @@
+#!/usr/bin/python
+
+import argparse
 import osmapi
 import numpy as np
 from lxml import etree
@@ -68,4 +71,11 @@ def parse_osm(input_file_path, output_file_path):
 
 
 if __name__ == '__main__':
-    parse_osm("../resources/ny.osm", "../resources/result.sdf")
+    parser = argparse.ArgumentParser(description='OSM to SDF parser')
+    parser.add_argument("-i", "--input", help="Input file path")
+    parser.add_argument("-o", "--output", help="Output file path")
+    args = parser.parse_args()
+    if args.input is None and args.output is None:
+        parser.print_help()
+    else:
+        parse_osm(args.input, args.output)
